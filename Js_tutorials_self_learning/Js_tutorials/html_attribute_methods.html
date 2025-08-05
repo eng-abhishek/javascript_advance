@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>HTML Attribute and Methods</title>
+  </head>
+  <body>
+    <span
+      id="first"
+      class="row"
+      data-game="test-game"
+      data-player="test-player"
+    >
+      Hello I am span with calss row
+    </span>
+    <span id="second">I am hidden here...</span>
+  </body>
+  <script>
+    // first is id
+    // let first = document.getElementById("first"); // any attributes
+
+    // console.log(first.attributes); // gives you all lsit of attributes
+    // console.log(first.dataset); // output is like game: "test-game" player: "test-player"
+    // It gives you all list of data attributes
+
+    // first.setAttribute("data-balance", "200"); // data-balance in a span
+
+    // first.removeAttribute("data-balance");
+
+    console.log(first.hasAttribute("data-player")); // return true/false is exist
+
+    console.log(first.hasAttribute("data-balance")); // return true/false if is exist
+
+    let second = document.getElementById("second");
+    second.setAttribute("hidden", "true");
+  </script>
+</html>

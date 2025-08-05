@@ -1,0 +1,23 @@
+<html>
+  <head>
+    Proto Types
+  </head>
+  <body>
+    Proto Types....
+  </body>
+  <script>
+    let obj = { name: "abhi", email: "email@gmail.com" };
+    let p = {
+      run: () => {
+        alert("run this code...");
+      },
+    };
+    obj.__proto__ = p;
+    p.__proto__ = {
+      last_name: "Ram",
+    };
+
+    console.log(obj.last_name);
+    obj.run();
+  </script>
+</html>

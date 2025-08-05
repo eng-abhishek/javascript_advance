@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>HTMl Inserction</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>I am outer div</div>
+
+      <div>I am inner div</div>
+      <div>I am inner div</div>
+      <div>I am inner div</div>
+
+      <div>I am outer div</div>
+      <span class="row">I am Here</span>
+    </div>
+  </body>
+  <script>
+    let first = document.getElementsByTagName("div");
+
+    // ########################  Commom Way To Inserction A Tag In a DIV ##################
+    // first[0].innerHTML = first[0].innerHTML + "<h3>Good To Go....</h3>";
+    // console.log(first[0]);
+
+    // ########################  CreateElement Method ##################
+
+    let div = document.createElement("div");
+    div.innerHTML = "<h4>Just for testing a div</h4>";
+    //first[0].appendChild(div);
+    //first[0].prepend(div); // on the top of container div
+    // first[0].before(div);
+    // first[0].after(div); particular div ke last me print kr dega
+    // means here i have container div in first[0]  to first[0] jaha se end ho raha hai just uske phane add hoga ye.
+  </script>
+</html>

@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Test It</h1>
+    <p>Test It</p>
+    <span>Test It</span>
+    <button>Click To Add</button>
+  </body>
+  <script>
+    $("button").click(function () {
+      $("h1").add("p").add("span").css("color", "yellow");
+    });
+  </script>
+</html>

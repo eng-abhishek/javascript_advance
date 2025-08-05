@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Open New Tag</title>
+  </head>
+  <body>
+    <button id="google">Open Google On Popup</button>
+    <button id="google_tab">Open Google On Tab</button>
+  </body>
+  <script>
+    document.getElementById("google").addEventListener("click", function (e) {
+      var url = "https://www.google.co.in/search?q=javascript";
+      var win = window.open(
+        url,
+        "",
+        "width=500,height=500,scrollbars=yes,resizable=yes"
+      );
+      win.focus();
+    });
+
+    document
+      .getElementById("google_tab")
+      .addEventListener("click", function (e) {
+        // var url = "https://www.google.co.in/search?q=javascript";
+        // var win = window.open(
+        //   url,
+        //   "",
+        //   "width=500,height=500,scrollbars=yes,resizable=yes"
+        // );
+        // win.focus();
+        window.location = "https://www.google.co.in";
+      });
+
+    google_tab;
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Inner HTML Outer HTML</title>
+  </head>
+  <body>
+    Hello Word
+    <span id="first"><b>Okey..</b>Hey i am span</span>
+    <span id="second" hidden>Hello I am hiddel properties...</span>
+  </body>
+  <script>
+    //  console.log(document.body.firstChild.nodeName); it return text
+    //  console.log(document.body.firstElementChild.nodeName); it return element
+    //  console.log(first.innerHTML); output is <b>Okey..</b>Hey i am span
+    //  first.innerHTML = "<i> No Issue Boss..<i>";  Hello Word No Issue Boss..
+    //  console.log(first.outerHTML);  <span id="first"><b>Okey..</b>Hey i am span</span>
+    // first.outerHTML = "<div>Hello I Am Done...</div>"; set data using this
+    // first.innerHTML = "Hello I Am Done..."; set data using innerHTML
+    // console.log(document.body.firstChild.data);  gives you data
+    // console.log(document.body.firstChild.nodeValue);
+    // console.log(document.body.textContent); Give you all content of the page.
+    // $0.hidden = false; display the hidden tag
+  </script>
+</html>

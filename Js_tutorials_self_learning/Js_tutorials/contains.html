@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Element Object</h1>
+    <h2>The contains() Method</h2>
+
+    <div id="myDIV">
+      <p>
+        I am a p element inside "myDIV", and I have a
+        <span id="mySPAN"><b>span</b></span> element inside of me.
+        <h3 id="h3">H3 here..</h3>
+      </p>
+    </div>
+
+    <p>Does the div element contain a span element?</p>
+    <p id="demo"></p>
+
+    <script>
+    //   const span = document.getElementById("mySPAN");
+    //   let answer = document.getElementById("myDIV").contains(span);
+    //   document.getElementById("demo").innerHTML = answer;
+
+     const h3 = document.getElementById("h3");
+     let ans = document.getElementById("myDIV").contains(h3);
+     document.getElementById("demo").innerHTML = ans;
+    </script>
+  </body>
+</html>

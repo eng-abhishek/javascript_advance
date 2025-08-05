@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+<body>
+    Teset
+</body>
+<script>
+
+
+async function hello(){
+    
+let DelhiWeither = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+       resolve("21 Deg")  
+    },1000)
+})
+
+let BangoloruWeither = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("30 Degree")
+    },6000)
+})
+
+let delWether = await DelhiWeither
+let BangoloruWether = await BangoloruWeither
+
+return [delWether,BangoloruWether]
+}
+
+console.log(hello())
+
+</script>
+    </html>

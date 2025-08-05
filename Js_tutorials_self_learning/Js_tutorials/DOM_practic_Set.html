@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>This DOM Practic Set</title>
+  </head>
+  <body>
+    <h1>This is my first H1</h1>
+    <p>This is my first P</p>
+    <div>
+      <span> First div span </span>
+      <p>My div p</p>
+      <span> My div span </span>
+    </div>
+  </body>
+  <script>
+    // console.log(document.body.firstChild); also count space and return first element
+    // console.log(document.body.lastChild);  not count space it return last element , here last element is <script>
+    // console.log(document.body.childNodes);  return all child nodes in array form means all element ko array
+    // me convert kr deta hai body ke inner ka
+    // console.log(document.body.childNodes[1]); ==== console.log(document.body.firstChild)
+    // console.log(document.body.childNodes.length);
+
+    // console.log(document.body.childNodes[document.body.childNodes.length - 1]); === (equal to) document.body.lastChild
+
+    // document.body.firstElementChild  return first child  html tag
+    // document.body.lastElementChild  return last child  html tag
+
+    // document.body.firstChild  return first child  data
+    // document.body.lastChild  return last child data
+    let node_list = document.body.childNodes;
+    let arr = Array.from(node_list);
+    console.log(arr);
+  </script>
+</html>
+<!-- <script></sc> tag should webelow of body tag..  -->

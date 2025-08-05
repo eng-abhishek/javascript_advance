@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button>Go !</button>
+    <ul>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+      <li>D</li>
+      <li>E</li>
+    </ul>
+  </body>
+  <script>
+    $("button").on("click", function () {
+      $("li").each(function () {
+        console.log($(this).text());
+      });
+    });
+  </script>
+</html>

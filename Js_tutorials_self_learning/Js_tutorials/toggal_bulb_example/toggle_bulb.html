@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Toggle Bulb</title>
+    <style>
+      .container {
+        width: 450px;
+        height: 450px;
+      }
+      .bulb-style {
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="bulb" class="bulb-style">Hello I am bulb</div>
+    </div>
+  </body>
+  <script>
+    setInterval(function () {
+      let a = document.querySelector("#bulb").classList.toggle("bulb-style");
+    }, 1000);
+    // console.log(a);
+  </script>
+</html>

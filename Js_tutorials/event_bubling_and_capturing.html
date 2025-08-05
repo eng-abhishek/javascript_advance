@@ -1,0 +1,79 @@
+<!-- Event Bubbling and Capturing -->
+<!-- Event Bubbliong Move from top to button or child to parents -->
+<!-- Event Capturing Move From Parent to child -->
+<!-- Event Prevent Default for a tag-->
+<html>
+  <head>
+    Event Bubbling and Capturing
+  </head>
+  <body>
+    <div>
+      <button>Like Me</button>
+      <a href="move.html">Move From Here..</a>
+    </div>
+  </body>
+  <script>
+    // document.querySelector("div").addEventListener("click", () => {
+    //   console.log("div");
+    // });
+
+    document.querySelector("button").addEventListener("click", () => {
+      console.log("button");
+    });
+
+    // prevent Default
+
+    var a = document.querySelector("a");
+    a.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("stop default behaviour of a tag.");
+    });
+  </script>
+</html>
+
+<!-- output is 1) button, 2) div Means child to parent  but if i set
+
+    document.querySelector("div").addEventListener("click", () => {
+      console.log("div");
+    },true);
+
+    document.querySelector("button").addEventListener("click", () => {
+      console.log("button");
+    },true);
+
+    Now it move parent to child.
+-->
+
+<!-- 
+     Stop Propogation Means : Not required to propogate from child to parent means when you
+     click on button then only button click is working if on parent mention any event then do
+     not requires to work
+
+    document.querySelector("button").addEventListener("click", (event) => {
+    event.stopPropagation();
+    console.log("button");
+    },true);
+
+-->
+
+<!-- 
+    
+    Stop Immedate Propagation : 
+
+    //  One Click Event
+
+    document.querySelector("button").addEventListener("click", (event) => {
+    
+    console.log("button");
+    },true);
+
+    //  Two Click Event
+
+    document.querySelector("button").addEventListener("click", (event) => {
+    event.stopImmedatePropagation();
+    console.log("button1");
+    },true);
+    
+    Now one button i set two click event. so both will work but not move towords parents
+    tag due to Stop Immedate Propagation.
+-->

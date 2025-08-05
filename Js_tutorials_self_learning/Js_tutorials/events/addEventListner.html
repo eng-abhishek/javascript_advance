@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Event Listner...</title>
+  </head>
+  <body>
+    <div>
+      <button id="my_btn">Click On Me</button>
+    </div>
+  </body>
+  <script>
+    let id = document.getElementById("my_btn");
+
+    x = function (e) {
+      console.log(e.target); // return element on which you clicked like button
+      console.log(e); // return all event object properties of clicked element
+      console.log(e.type); // return type of event means click or onchange event type hai
+      console.log(e.clientX); // return Y axis, return means on which place on X axis clice on click burron
+      console.log(e.clientY); // return Y axis
+      alert("Even Number..");
+    };
+
+    y = function (e) {
+      alert("Odd Number...");
+    };
+
+    let num = prompt("Enter You Number:");
+    if (num % 2 == 0) {
+      id.addEventListener("click", x);
+    } else {
+      id.removeEventListener("click", y);
+    }
+
+    // id.addEventListener("click", function (e) {
+    //   alert("Hello word 1");
+    // });
+    // id.addEventListener("click", function (e) {
+    //   alert("Hello word 2");
+    // });
+  </script>
+</html>

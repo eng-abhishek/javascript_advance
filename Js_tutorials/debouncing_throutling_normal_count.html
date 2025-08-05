@@ -1,0 +1,51 @@
+<html>
+  <head></head>
+  <body onscroll="showCount()" style="height: 1000px">
+    <div class="normal_count">Normal Count</div>
+    <div class="throttling_count">Throttling Count</div>
+    <div class="debouncing_count">Debouncing Count</div>
+  </body>
+  <script>
+    let n_count = 0;
+    let t_count = 0;
+    let d_count = 0;
+    let t_count_status = true;
+
+    let normal_count = document.querySelector(".normal_count");
+    let throttling_count = document.querySelector(".throttling_count");
+    let debouncing_count = document.querySelector(".debouncing_count");
+
+    const normal_count_fun = () => {
+      n_count++;
+      normal_count.innerHTML = `Normal Count ${n_count}`;
+    };
+
+    const throttling_count_fun = () => {
+      if (t_count_status == true) {
+        t_count++;
+        t_count_status = false;
+        setTimeout(() => {
+          throttling_count.innerHTML = `Throttling Count ${t_count}`;
+          t_count_status = true;
+        }, 1000);
+      }
+    };
+
+    let interval;
+
+    const debouncing_count_fun = () => {
+      clearInterval(interval);
+
+      interval = setTimeout(() => {
+        d_count++;
+        debouncing_count.innerHTML = `Debouncing Count ${d_count}`;
+      }, 1000);
+    };
+
+    const showCount = () => {
+      normal_count_fun();
+      throttling_count_fun();
+      debouncing_count_fun();
+    };
+  </script>
+</html>

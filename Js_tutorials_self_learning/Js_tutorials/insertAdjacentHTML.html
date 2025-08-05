@@ -1,0 +1,33 @@
+<!--- insertAdjacentHTML, insertAdjacentElement and insertAdjacentText -->
+<html>
+  <head>
+    <title>
+      insertAdjacentHTML, insertAdjacentElement and insertAdjacentText
+    </title>
+  </head>
+  <body>
+    <span id="first">Testing Span</span>
+    <script>
+      let first = document.getElementById("first");
+      //   first.insertAdjacentHTML(
+      //     "beforebegin",
+      //     "<div class='test'>Test div Begin</div>"
+      //   );
+
+      first.insertAdjacentHTML(
+        "beforeend",
+        "<div class='test'>Test div Begin</div>"
+      );
+
+      //   first.insertAdjacentHTML(
+      //     "afterend",
+      //     "<div class='test'>Test div End</div>"
+      //   );
+
+      //   first.insertAdjacentHTML(
+      //     "afterbegin",
+      //     "<div class='test'>Test div End</div>"
+      //   );
+    </script>
+  </body>
+</html>
