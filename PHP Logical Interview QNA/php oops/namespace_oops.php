@@ -1,0 +1,1 @@
+<!-- Name Space is a grouping things like classes functions and constants togather in a structure way -->
