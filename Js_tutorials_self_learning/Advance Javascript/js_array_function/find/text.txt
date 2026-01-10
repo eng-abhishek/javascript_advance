@@ -1,0 +1,85 @@
+array.find(callback(element, index, array))
+callback → function जो condition check करता है
+
+return करता है पहला element जो condition satisfy करे
+
+अगर कुछ न मिले → undefined
+
+
+🔹 Simple Example
+js
+Copy code
+const numbers = [10, 20, 30, 40];
+
+const result = numbers.find(num => num > 25);
+
+console.log(result); // 30
+
+
+🔹 Object Array Example (Most Common)
+js
+Copy code
+const users = [
+  { id: 1, name: "Rahul" },
+  { id: 2, name: "Amit" },
+  { id: 3, name: "Sita" }
+];
+
+const user = users.find(u => u.id === 2);
+
+console.log(user);
+// { id: 2, name: "Amit" }
+
+
+🔹 Real Use Case (Cart / Product)
+js
+Copy code
+const cart = [
+  { id: 101, name: "Laptop", price: 50000 },
+  { id: 102, name: "Mouse", price: 500 }
+];
+
+const product = cart.find(item => item.id === 102);
+
+console.log(product.name); // Mouse
+
+
+🔹 find() vs filter()
+
+find()	                                         filter()
+First match return	                           All matches return
+Single object	                                 Array of objects
+Faster (stops early)	                          Slower
+
+
+js
+Copy code
+array.find(x => x.id === 1);   // object
+array.filter(x => x.id === 1); // array
+
+
+🔹 If Not Found
+js
+Copy code
+const data = [1, 2, 3];
+
+const res = data.find(x => x > 5);
+
+console.log(res); // undefined
+
+
+
+🔹 Common Mistake ❌
+js
+Copy code
+// WRONG
+array.find(item => {
+  item.id === 2;
+});
+
+
+✔ Correct:
+
+js
+Copy code
+array.find(item => item.id === 2);

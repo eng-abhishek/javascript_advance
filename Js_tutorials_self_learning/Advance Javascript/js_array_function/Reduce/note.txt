@@ -1,0 +1,101 @@
+JavaScript में reduce() function का use array को single value / object / array में convert करने के लिए किया जाता है।
+यह सबसे powerful array method माना जाता है 💪
+
+🔹 Syntax
+array.reduce((accumulator, currentValue, index, array) => {
+  return updatedAccumulator;
+}, initialValue);
+
+
+accumulator (acc) → result store karta hai
+
+currentValue → current element
+
+initialValue → starting value (VERY IMPORTANT)
+
+🔹 Simple Example (Sum)
+const numbers = [10, 20, 30];
+
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+console.log(sum); // 60
+
+🔹 Multiply Example
+const nums = [2, 3, 4];
+
+const product = nums.reduce((acc, n) => acc * n, 1);
+
+console.log(product); // 24
+
+🔹 Object Array – Total Price (Very Common)
+const cart = [
+  { name: "Laptop", price: 50000, qty: 1 },
+  { name: "Mouse", price: 500, qty: 2 }
+];
+
+const total = cart.reduce(
+  (acc, item) => acc + item.price * item.qty,
+  0
+);
+
+console.log(total); // 51000
+
+🔹 Group By (Advanced)
+const users = [
+  { name: "Rahul", age: 20 },
+  { name: "Amit", age: 20 },
+  { name: "Sita", age: 25 }
+];
+
+const grouped = users.reduce((acc, user) => {
+  acc[user.age] = acc[user.age] || [];
+  acc[user.age].push(user);
+  return acc;
+}, {});
+
+console.log(grouped);
+
+🔹 Count Occurrences
+const fruits = ["apple", "banana", "apple", "orange"];
+
+const count = fruits.reduce((acc, fruit) => {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(count);
+// { apple: 2, banana: 1, orange: 1 }
+
+🔹 Convert Array → Object
+const items = [
+  { id: 1, name: "Laptop" },
+  { id: 2, name: "Mouse" }
+];
+
+const obj = items.reduce((acc, item) => {
+  acc[item.id] = item;
+  return acc;
+}, {});
+
+console.log(obj[1].name); // Laptop
+
+🔹 reduce() vs map/filter
+map	filter	reduce
+Transform	Select	Combine
+Array → Array	Array → Array	Array → Anything
+🔹 Common Mistakes ❌
+
+❌ initial value na dena
+
+array.reduce((acc, x) => acc + x);
+
+
+✔ Correct:
+
+array.reduce((acc, x) => acc + x, 0);
+
+🔹 Redux Use Case
+const totalQty = cart.reduce(
+  (acc, item) => acc + item.qty,
+  0
+);

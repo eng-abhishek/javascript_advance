@@ -1,0 +1,76 @@
+JavaScript में filter() function का use array से condition match करने वाले elements निकालने के लिए किया जाता है।
+यह हमेशा नई array return करता है (original array change नहीं होती).
+
+🔹 Syntax
+array.filter((element, index, array) => {
+  return condition;
+});
+
+🔹 Simple Example
+const numbers = [10, 20, 30, 40, 50];
+
+const result = numbers.filter(num => num > 30);
+
+console.log(result); // [40, 50]
+
+🔹 Object Array Example
+const users = [
+  { id: 1, name: "Rahul", age: 22 },
+  { id: 2, name: "Amit", age: 17 },
+  { id: 3, name: "Sita", age: 25 }
+];
+
+const adults = users.filter(user => user.age >= 18);
+
+console.log(adults);
+
+🔹 Real Use Case (Cart / Remove Item)
+const cart = [
+  { id: 101, name: "Laptop" },
+  { id: 102, name: "Mouse" }
+];
+
+// Remove product with id 102
+const updatedCart = cart.filter(item => item.id !== 102);
+
+console.log(updatedCart);
+
+🔹 filter() vs find()
+filter()	find()
+Array return	Single object return
+All matches	First match
+Used for remove	Used for get
+array.filter(x => x.id === 1); // [{...}]
+array.find(x => x.id === 1);   // {...}
+
+🔹 filter() + map() (Very Common)
+const products = [
+  { name: "Laptop", price: 50000 },
+  { name: "Mouse", price: 500 }
+];
+
+const cheapProductNames = products
+  .filter(p => p.price < 1000)
+  .map(p => p.name);
+
+console.log(cheapProductNames); // ["Mouse"]
+
+🔹 If No Match Found
+const data = [1, 2, 3];
+
+const res = data.filter(x => x > 10);
+
+console.log(res); // []
+
+🔹 Common Mistake ❌
+
+❌ return bhool jana
+
+array.filter(x => {
+  x > 5;
+});
+
+
+✔ Correct:
+
+array.filter(x => x > 5);

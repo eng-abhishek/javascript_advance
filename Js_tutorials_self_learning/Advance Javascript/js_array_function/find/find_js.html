@@ -1,0 +1,25 @@
+<html>
+  <head></head>
+  <body>
+    <h2>Js Find Method..</h2>
+  </body>
+</html>
+<script>
+  // First Step 1
+
+  let numbers = [2, 4, 6, 3, 7, 8, 9];
+  //   console.log(arr.find((item) => item > 10));
+  const result = numbers.find((num) => num > 5);
+  console.log(result); // 30
+
+  // Second Step 2
+
+  const users = [
+    { id: 1, name: "Rahul" },
+    { id: 2, name: "Amit" },
+    { id: 3, name: "Sita" },
+  ];
+
+  getUsers = users.find((u) => u.id === 2);
+  console.log(getUsers);
+</script>

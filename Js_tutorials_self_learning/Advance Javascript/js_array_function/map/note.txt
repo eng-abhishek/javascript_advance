@@ -1,0 +1,83 @@
+JavaScript में map() function का use array को transform करने के लिए किया जाता है।
+यह हर element पर loop चलता है और नई array return करता है (original array change नहीं होती).
+
+🔹 Syntax
+array.map((element, index, array) => {
+  return newElement;
+});
+
+🔹 Simple Example
+const numbers = [1, 2, 3, 4];
+
+const double = numbers.map(num => num * 2);
+
+console.log(double); // [2, 4, 6, 8]
+
+🔹 Object Array Example
+const users = [
+  { id: 1, name: "Rahul" },
+  { id: 2, name: "Amit" }
+];
+
+const userNames = users.map(user => user.name);
+
+console.log(userNames); // ["Rahul", "Amit"]
+
+🔹 Add New Property (Very Common)
+const products = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Mouse", price: 500 }
+];
+
+const updatedProducts = products.map(p => ({
+  ...p,
+  priceWithGST: p.price + p.price * 0.18
+}));
+
+console.log(updatedProducts);
+
+🔹 React Example (Rendering List)
+<ul>
+  {products.map(item => (
+    <li key={item.id}>
+      {item.name} - ₹{item.price}
+    </li>
+  ))}
+</ul>
+
+🔹 map() vs forEach()
+map()	forEach()
+New array return	Nothing return
+Data transform	Side effects
+React friendly	Not preferred
+// map
+const a = [1,2].map(x => x * 2);
+
+// forEach
+const b = [];
+[1,2].forEach(x => b.push(x * 2));
+
+🔹 Common Mistakes ❌
+
+❌ return bhool jana
+
+array.map(x => {
+  x * 2;
+});
+
+
+✔ Correct:
+
+array.map(x => x * 2);
+
+🔹 map + find (Advanced)
+const cart = [
+  { id: 1, qty: 1 },
+  { id: 2, qty: 2 }
+];
+
+const updated = cart.map(item =>
+  item.id === 2 ? { ...item, qty: item.qty + 1 } : item
+);
+
+console.log(updated);
